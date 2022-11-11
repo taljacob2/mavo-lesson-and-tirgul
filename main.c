@@ -16,8 +16,7 @@
  * @param value Any value to be represented in binary, formatted as a string.
  * @return The given `value`'s binary representation in a string format.
  */
-char *toBinaryString(int value) {
-    char  buf[FMT_BUF_SIZE];
+char *toBinaryString(int value, char *buf) {
     char *s = buf + FMT_BUF_SIZE;
     *--s    = 0;
     if (!value) *--s = '0';
@@ -27,6 +26,7 @@ char *toBinaryString(int value) {
 
 int main() {
     int hex = 0x0A;
-    printf("%s\n", toBinaryString(hex));
+    char  buf[FMT_BUF_SIZE];
+    printf("%s\n", toBinaryString(hex, buf));
     return 0;
 }
