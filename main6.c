@@ -7,8 +7,13 @@ void passMatrixIndexTest(){
     printf("%d\n", matrix[0][2]);
 }
 
-int main(){
-    passMatrixIndexTest();
+test(){
 
+}
+
+int main(){
+//    passMatrixIndexTest();
+
+printf("%d\n", test());
     return 0;
 }
