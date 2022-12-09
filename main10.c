@@ -21,7 +21,7 @@ unsigned char *readStringFromStdinUntilNewlineDynamically() {
 
         /*
          * Prepare to save `readChar` to `outputString`.
-         * Realloc `outputString` dynamically if needed.
+         * Reallocate `outputString` dynamically if needed.
          */
         if (outputStringSize * 2 == outputStringAllocationSize) {
             outputStringAllocationSize *= 2;
