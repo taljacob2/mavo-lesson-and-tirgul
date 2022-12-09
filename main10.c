@@ -36,7 +36,12 @@ unsigned char *readStringFromStdinUntilNewlineDynamically() {
         readChar = getchar(); // Read again from `stdio` stream.
         outputStringSize++;
     }
+
     outputString[outputStringSize - 1] = 0;
+
+    // Concise the allocation of `outputString`.
+    outputString =
+            realloc(outputString, sizeof(unsigned char) * outputStringSize);
 
     return outputString;
 }
