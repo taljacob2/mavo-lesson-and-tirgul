@@ -20,7 +20,7 @@ unsigned char *readStringFromStdinUntilNewlineDynamically() {
     while (readChar != '\n' && readChar != '\r' && readChar != EOF) {
 
         /*
-         * Prepare to save `readChar` to the output string.
+         * Prepare to save `readChar` to `outputString`.
          * Realloc `outputString` dynamically if needed.
          */
         if (outputStringSize * 2 == outputStringAllocationSize) {
@@ -30,13 +30,14 @@ unsigned char *readStringFromStdinUntilNewlineDynamically() {
                             sizeof(unsigned char) * outputStringAllocationSize);
         }
 
-        // Save `readChar` to the output string.
+        // Save `readChar` to `outputString`.
         outputString[outputStringSize - 1] = (unsigned char) readChar;
 
         readChar = getchar(); // Read again from `stdio` stream.
         outputStringSize++;
     }
 
+    // Always end `outputString` with a `NULL` char.
     outputString[outputStringSize - 1] = 0;
 
     // Concise the allocation of `outputString`.
