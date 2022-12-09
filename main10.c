@@ -1,8 +1,5 @@
-#include "Bool.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-#define ARRAY_SIZE 10
 
 /**
  * @brief Reads a string from the `stdin` stream until the first "newline" char
