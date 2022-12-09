@@ -5,10 +5,16 @@
 #define ARRAY_SIZE 10
 
 /**
+ * @brief Reads a string from the `stdin` stream until the first "newline" char
+ *        ('\n' or '\r') or EOF.
+ *
+ * - The returned string will NOT include the "newline" char.
+ * - In case the string was ended with a "newline" char, that char will be
+ *   removed from the `stdin` stream.
  *
  * @attention Remember to `free` the returned string.
  *
- * @return
+ * @return The first string that was read from the `stdio` stream.
  */
 unsigned char *readStringFromStdinUntilNewlineDynamically() {
     unsigned long int outputStringSize           = 1L;
