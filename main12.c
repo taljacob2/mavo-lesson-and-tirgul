@@ -43,8 +43,7 @@ BOOLEAN isMagicSquare(int arr[SIZE][SIZE]) {
         if (sum != sumRow(arr, i)) { return FALSE; }
     }
 
-    sum = sumCol(arr, 0);
-    for (int i = 1; i < SIZE; ++i) {
+    for (int i = 0; i < SIZE; ++i) {
         if (sum != sumCol(arr, i)) { return FALSE; }
     }
 
