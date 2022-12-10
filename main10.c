@@ -50,6 +50,8 @@ unsigned char *readStringFromStdinUntilNewlineDynamically() {
     return outputString;
 }
 
+unsigned char *readStringFromStdinUntilNewlineOrDeterminedSize(){}
+
 int main() {
     unsigned char *string = readStringFromStdinUntilNewlineDynamically();
     printf("%s", string);
