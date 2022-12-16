@@ -6,6 +6,10 @@ int main() {
 
     int *p;
 
+    /*
+     * Force `p` to be able to write to `ch` with `*p`, by casting `&ch` to
+     * `int *`.
+     */
     p = (int *) &ch;
 
     *p = 17;
