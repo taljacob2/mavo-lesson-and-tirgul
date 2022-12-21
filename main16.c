@@ -27,3 +27,14 @@ int main() {
 
     return 0;
 }
+
+/*
+ * Allowed functions to use from <string.h> (by Effi):
+ *
+ * gets
+ * puts
+ * strlen
+ * strcpy
+ * strcmp
+ * strcat
+ */
