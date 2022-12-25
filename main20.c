@@ -7,22 +7,21 @@ void deleteOccurrence(char *sourceString,
                       char *stringToDeleteFromSourceString) {
     char *firstPosition = stringToDeleteFromSourceString;
     char *newString     = malloc(strlen(sourceString) + sizeof(char) * 1);
+    *newString          = 0;
     char *firstPositionOfNewString = newString;
     while (*sourceString) {
         stringToDeleteFromSourceString  = firstPosition;
         char *sourceStringSavedPosition = sourceString;
-        while (*sourceString == *stringToDeleteFromSourceString) {
-            sourceString++;
-            stringToDeleteFromSourceString++;
+        while (*sourceString++ == *stringToDeleteFromSourceString++) {
             if (!*stringToDeleteFromSourceString) {
                 sourceStringSavedPosition = sourceString;
             }
         }
         sourceString = sourceStringSavedPosition;
-        *newString++ = *sourceString;
-        sourceString++;
+        *newString++ = *sourceString++;
     }
-    newString = firstPositionOfNewString;
+    newString  = firstPositionOfNewString;
+    *newString = 0;
 
     // Concise the memory allocation.
     newString = realloc(newString, strlen(newString) + sizeof(char) * 1);
