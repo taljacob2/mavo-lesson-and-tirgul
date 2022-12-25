@@ -13,7 +13,7 @@ void skipCharacterWhilePrintingDynamicallyAllocating(const char *string,
     }
 
     // Concise the memory allocation.
-    newString = realloc(newString, strlen(string) + sizeof(char) * 1);
+    newString = realloc(newString, strlen(newString) + sizeof(char) * 1);
 
     puts(newString); // Do something.
 
