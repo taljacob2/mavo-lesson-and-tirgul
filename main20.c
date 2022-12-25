@@ -32,7 +32,6 @@ void deleteOccurrence(char *sourceString,
 }
 
 int main() {
-
     deleteOccurrence("All you need is love. Thank you very much.", "you");
 
     return 0;
