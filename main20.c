@@ -5,12 +5,12 @@
 
 void deleteOccurrence(char *sourceString,
                       char *stringToDeleteFromSourceString) {
-    char *firstPosition = stringToDeleteFromSourceString;
-    char *newString     = malloc(strlen(sourceString) + sizeof(char) * 1);
-    *newString          = 0;
+    char *firstPositionOfStringToDelete = stringToDeleteFromSourceString;
+    char *newString = malloc(strlen(sourceString) + sizeof(char) * 1);
+    *newString      = 0;
     char *firstPositionOfNewString = newString;
     while (*sourceString) {
-        stringToDeleteFromSourceString  = firstPosition;
+        stringToDeleteFromSourceString  = firstPositionOfStringToDelete;
         char *sourceStringSavedPosition = sourceString;
         while (*sourceString++ == *stringToDeleteFromSourceString++) {
             if (!*stringToDeleteFromSourceString) {
