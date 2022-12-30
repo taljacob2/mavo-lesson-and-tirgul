@@ -22,14 +22,23 @@ int main() {
 
 
     Struct1 struct1_2;
+
     struct1_2 = struct1;
+    printf("Executing: `struct1_2 = struct1;`\n");
+
     printf("struct1_2.names = %s\n", struct1_2.names);
 
     struct1.names[0] = 'z';
     printf("Executing: `struct1.names[0] = 'z';`\n");
 
     printf("struct1.names = %s\n", struct1.names);
-
     printf("struct1_2.names = %s\n", struct1_2.names);
+
+    struct1_2 = struct1;
+    printf("Executing: `struct1_2 = struct1;`\n");
+
+    printf("struct1.names = %s\n", struct1.names);
+    printf("struct1_2.names = %s\n", struct1_2.names);
+
     return 0;
 }
