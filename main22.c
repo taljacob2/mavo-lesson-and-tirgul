@@ -17,9 +17,7 @@ int main() {
     //    Struct2 struct2;
     //    struct2 = struct1; // Not possible for compilation.
 
-
     // -------------------------------------
-
 
     Struct1 struct1_2;
 
