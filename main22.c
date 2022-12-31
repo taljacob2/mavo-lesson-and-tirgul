@@ -9,7 +9,15 @@ typedef struct {
 } Struct2;
 
 int main() {
+
+    //    Different ways to initialize `struct1` inline:
     Struct1 struct1 = {.names = {'a', 'b', 'c'}};
+    //    Struct1 struct1 = {.names = {"abc"}};
+    //    Struct1 struct1 = {{'a', 'b', 'c'}};
+    //    Struct1 struct1 = {{"abc"}};
+    //    Struct1 struct1 = {"abc"};
+
+
     printf("struct1.names = %s\n", struct1.names);
 
     // -------------------------------------
@@ -21,7 +29,7 @@ int main() {
 
     Struct1 struct1_2;
 
-    struct1_2 = struct1;
+    struct1_2 = struct1; // Copies all members by value.
     printf("Executing: `struct1_2 = struct1;`\n");
 
     printf("struct1_2.names = %s\n", struct1_2.names);
@@ -32,7 +40,7 @@ int main() {
     printf("struct1.names = %s\n", struct1.names);
     printf("struct1_2.names = %s\n", struct1_2.names);
 
-    struct1_2 = struct1;
+    struct1_2 = struct1; // Copies all members by value.
     printf("Executing: `struct1_2 = struct1;`\n");
 
     printf("struct1.names = %s\n", struct1.names);
