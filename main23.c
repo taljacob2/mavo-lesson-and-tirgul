@@ -13,20 +13,34 @@ struct car {
 
 void scanCar(Car *car) {
     printf("company: ");
-    scanf("%s", car->company);
+    gets(car->company);
 
     printf("model: ");
-    scanf("%s", car->model);
+    gets(car->model);
 
     printf("year: ");
-    scanf("%d", &car->year);
+
+    /*
+     * Get an integer to `car->year`, and ignore the "ENTER" key you press
+     * afterwards (with `%*c`), so it won't affect the next `gets(car->company)`.
+     */
+    scanf("%d%*c", &car->year);
 }
 
 void printCar(Car *car) {
     printf("{ ");
-    printf("company: %s, ", car->company);
-    printf("model: %s, ", car->model);
-    printf("year: %d", car->year);
+
+    printf("company: ");
+    printf("%s", car->company);
+    printf(", ");
+
+    printf("model: ");
+    printf("%s", car->model);
+    printf(", ");
+
+    printf("year: ");
+    printf("%d", car->year);
+
     printf(" }\n");
 }
 
