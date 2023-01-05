@@ -1,10 +1,13 @@
 #include <stdio.h>
 
+#define SIZE        30
+#define STRING_SIZE 20
+
 typedef struct car Car;
 
 struct car {
-    char company[20];
-    char model[20];
+    char company[STRING_SIZE];
+    char model[STRING_SIZE];
     int  year;
 };
 
@@ -28,22 +31,22 @@ void printCar(Car *car) {
 }
 
 int main() {
-    Car carArray[30];
+    Car carArray[SIZE];
 
     // Scan cars from user.
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < SIZE; i++) {
         printf("scan Car %d:\n", i);
         scanCar(&carArray[i]);
     }
 
     printf("\nprinting all Cars that their year is greater than 1995:\n");
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < SIZE; i++) {
         if (carArray[i].year > 1995) { printCar(&carArray[i]); }
     }
 
     printf("\nprinting all Cars that their model name starts with the letter "
            "`B`:\n");
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < SIZE; i++) {
         if (carArray[i].model[0] == 'B') { printCar(&carArray[i]); }
     }
 
