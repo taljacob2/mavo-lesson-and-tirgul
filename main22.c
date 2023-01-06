@@ -66,7 +66,7 @@ int main() {
      * } Struct1;
      *
      * void copyStruct1(Struct1 *destination, const Struct1 *source){
-     *     destination->names = malloc(sizeof(char) * (20 + 1));
+     *     destination->names = malloc(sizeof(char) * (strlen(source->names) + 1));
      *     if (destinaion->names == NULL) { throw a message }
      *     strcpy(destination->names, source->names);
      * }
