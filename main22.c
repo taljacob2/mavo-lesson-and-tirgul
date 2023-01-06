@@ -64,10 +64,30 @@ int main() {
      * typedef struct {
      *     char *names;
      * } Struct1;
+     * ```
      *
+     * And one of the two options for `copyStruct1`:
+     * ```
      * void copyStruct1(Struct1 *destination, const Struct1 *source){
      *     destination->names = malloc(sizeof(char) * (strlen(source->names) + 1));
      *     if (destinaion->names == NULL) { throw a message }
+     *     strcpy(destination->names, source->names);
+     * }
+     * ```
+     * or
+     *
+     * Yehuda Elmaliahi (the lecturer) likes this implementation better:
+     * (I don't, because this makes the `copyStruct1` too smart,
+     * and also, complicates the user for using the function.)
+     * ```
+     * void copyStruct1(Struct1 *destination, const Struct1 *source){
+     *     destination->names = malloc(sizeof(char) * (strlen(source->names) + 1));
+     *     if (destinaion->names == NULL) { throw a message }
+     *
+     *     // Dangerous code: The user of this function **MUST** set
+     *     // destination->names to NULL before invoking this function.
+     *     free(destination->names);
+     *
      *     strcpy(destination->names, source->names);
      * }
      * ```
