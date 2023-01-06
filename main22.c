@@ -58,6 +58,19 @@ int main() {
      * that was allocated at `struct1.names`. And thus changing
      * `struct1_2.names` would have caused a change in `struct1.names`.
      * In this case, we should have make a **manual** deep copy for `names`.
+     *
+     * For example:
+     * ```
+     * typedef struct {
+     *     char *names;
+     * } Struct1;
+     *
+     * void copyStruct1(Struct1 *destination, const Struct1 *source){
+     *     destination->names = malloc(sizeof(char) * (20 + 1));
+     *     if (destinaion->names == NULL) { throw a message }
+     *     strcpy(destination->names, source->names);
+     * }
+     * ```
      */
 
     return 0;
