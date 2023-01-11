@@ -39,7 +39,10 @@ BOOLEAN addMovieToCountry(Country *country, Movie *movie) {
     Movie *movieEntry = searchMovieByCountry(country, movie->name);
     if (movieEntry == NULL) {
 
-        // realloc `arrMovies`. Update `arrMoviesSize` and add `movie` as an element.
+        /*
+         * 1. `realloc` `arrMovies`.
+         * 2. Update `arrMoviesSize` and add `movie` as an element.
+         */
         Movie **allocatedArrMovies = (Movie **) realloc(
                 country->arrMovies,
                 sizeof(Movie *) * (country->arrMoviesSize + 1));
