@@ -36,6 +36,9 @@ Movie *searchMovieByCountry(Country *country, char *movieName) {
 }
 
 BOOLEAN addMovieToCountry(Country *country, Movie *movie) {
+    if (country == NULL) { return FALSE; }
+    if (movie == NULL) { return FALSE; }
+
     Movie *movieEntry = searchMovieByCountry(country, movie->name);
     if (movieEntry == NULL) {
 
