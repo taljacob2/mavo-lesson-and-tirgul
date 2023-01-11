@@ -1,6 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define TRUE  1
+#define FALSE 0
+typedef int BOOLEAN;
+
 typedef struct movie {
     char *name;
     int   session;
@@ -29,6 +33,27 @@ Movie *searchMovieByCountry(Country *country, char *movieName) {
         if (strcmp(movie->name, movieName) == 0) { return movie; }
     }
     return NULL;
+}
+
+BOOLEAN addMovieToCountry(Country *country, Movie *movie) {
+    Movie *movieEntry = searchMovieByCountry(country, movie->name);
+    if (movieEntry == NULL) {
+
+        // realloc `arrMovies`. Update `arrMoviesSize` and add `movie` as an element.
+        Movie **allocatedArrMovies = (Movie **) realloc(
+                country->arrMovies,
+                sizeof(Movie *) * (country->arrMoviesSize + 1));
+
+        if (allocatedArrMovies != NULL) {
+            country->arrMovies = allocatedArrMovies;
+            country->arrMoviesSize++;
+            country->arrMovies[country->arrMoviesSize - 1] = movie;
+        } else {
+            return FALSE;
+        }
+    }
+
+    return TRUE;
 }
 
 int main() { return 0; }
