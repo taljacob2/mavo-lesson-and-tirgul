@@ -9,6 +9,9 @@
  * Where the largest ring is positioned at the bottom, and the second largest
  * ring is positioned on top of it, and the third largest ring is position on
  * top of it, and so on...
+ *
+ * We need to move all the rings to `t3`, and keep them sorted as they were in
+ * `t1`.
  */
 void move(int n, char t1, char t2, char t3) {
     if (n == 1) {
