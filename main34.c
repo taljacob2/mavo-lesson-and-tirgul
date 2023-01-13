@@ -21,7 +21,14 @@
  * @author Yehuda Elmaliahi
  */
 int findPath(int i, int j, int mat[][N], int maxRow) {
+    int max = -1;
+    int tmp;
 
+    // check up
+    if (i > 0 && mat[i - 1][j] > mat[i][j]) {
+        tmp = findPath(i - 1, j, mat, maxRow);
+        if (tmp > max) { max = tmp; }
+    }
 }
 
 int main() {
