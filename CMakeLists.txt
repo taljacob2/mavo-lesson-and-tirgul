@@ -30,4 +30,4 @@ add_executable(mavo_lesson_and_tirgul
         main7.c
         main8.c
         main9.c
-        main23.c main24.c main25.c main26.c main27.c main28.c main29.c main30.c main31.c main32.c main33.c)
+        main23.c main24.c main25.c main26.c main27.c main28.c main29.c main30.c main31.c main32.c main33.c main34.c)
