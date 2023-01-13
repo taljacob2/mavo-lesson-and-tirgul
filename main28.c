@@ -27,6 +27,7 @@ int findElementByBinarySearch(int *arr, int size, int element) {
  */
 int *findElementByBinarySearchYehuda(int *arr, int size, int element) {
     if (size == 0) { return NULL; }
+    if ((size == 1) && (arr[0] != element)) { return NULL; }
 
     if (arr[size / 2] == element) {
         return arr + (size / 2);
@@ -41,6 +42,10 @@ int *findElementByBinarySearchYehuda(int *arr, int size, int element) {
 int main() {
     int arr[SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     printf("findElementByBinarySearchYehuda = %d\n",
-           *findElementByBinarySearchYehuda(arr, SIZE, 0));
+           *findElementByBinarySearchYehuda(arr, SIZE, 3));
+
+    int arr2[1] = {0};
+    printf("findElementByBinarySearchYehuda = %d\n",
+           *findElementByBinarySearchYehuda(arr2, 1, 1));
     return 0;
 }
