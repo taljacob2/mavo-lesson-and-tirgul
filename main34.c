@@ -29,6 +29,13 @@ int findPath(int i, int j, int mat[][N], int maxRow) {
         tmp = findPath(i - 1, j, mat, maxRow);
         if (tmp > max) { max = tmp; }
     }
+
+    // check down
+
+    // check right
+
+    // check left
+
 }
 
 int main() {
