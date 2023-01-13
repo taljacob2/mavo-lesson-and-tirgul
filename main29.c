@@ -12,19 +12,28 @@
  *
  * We need to move all the rings to `t3`, and keep them sorted as they were in
  * `t1`.
- *
- * The solution, is to move all the rings to `t2`, in reversed order,
- * and then when we finished to do that, move them all (in reversed order) to
- * `t3`. The result will be that we will move all the rings in straight order
- * from `t1` to `t3`.
  */
+void moveReverse(int n, char t1, char t2, char t3) {
+    if (n == 1) {
+        printf("move ring from tower %c to tower %c\n", t1, t3);
+    } else {
+        moveReverse(n - 1, t1, t3, t2);
+        printf("move ring from tower %c to tower %c\n", t1, t2);
+        moveReverse(n - 1, t2, t1, t3);
+        printf("move ring from tower %c to tower %c\n", t2, t3);
+    }
+}
+
+// TODO: need to solve.
 void move(int n, char t1, char t2, char t3) {
     if (n == 1) {
         printf("move ring from tower %c to tower %c\n", t1, t3);
     } else {
-        move(n - 1, t1, t3, t2);
+        moveReverse(1, t1, t2, t3);
         printf("move ring from tower %c to tower %c\n", t1, t2);
-        move(n - 1, t2, t1, t3);
+        moveReverse(1, t1, t3, t2);
+        printf("move ring from tower %c to tower %c\n", t2, t3);
+        moveReverse(1, t3, t1, t2);
         printf("move ring from tower %c to tower %c\n", t2, t3);
     }
 }
