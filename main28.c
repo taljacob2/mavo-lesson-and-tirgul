@@ -20,21 +20,18 @@ int findMaxElement(int *arr, int size) {
 /**
  * @attention unsupported when `size` is "less than or equal" to `0`.
  *
+ * @attention Given the `arr` is already sorted!!!
+ *
+ * @return In case the `element` is found, returns the index of the `element`.
+ *         Else returns `-1`.
  * @author Yehuda Elmaliahi / Patched by Tal Jacob.
  */
-int findMaxElementYehuda(int *arr, int size) {
-    if (size == 1) { return arr[0]; }
+int findElementByBinarySearchYehuda(int *arr, int size, int element) {
 
-    int returnValueOfNextFindMaxElement =
-            findMaxElementYehuda(arr + 1, size - 1);
-    int maxElement = arr[0] > returnValueOfNextFindMaxElement
-                             ? arr[0]
-                             : returnValueOfNextFindMaxElement;
-    return maxElement;
 }
 
 int main() {
-    int arr[SIZE] = {0, 1, 2, 3, 4, 9, 6, 7, 8, 5};
-    printf("findMaxElement = %d\n", findMaxElement(arr, SIZE));
+    int arr[SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    printf("findMaxElement = %d\n", findElementByBinarySearchYehuda(arr, SIZE));
     return 0;
 }
