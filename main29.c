@@ -12,6 +12,11 @@
  *
  * We need to move all the rings to `t3`, and keep them sorted as they were in
  * `t1`.
+ *
+ * The solution, is to move all the rings to `t2`, in reversed order,
+ * and then when we finished to do that, move them all (in reversed order) to
+ * `t3`. The result will be that we will move all the rings in straight order
+ * from `t1` to `t3`.
  */
 void move(int n, char t1, char t2, char t3) {
     if (n == 1) {
