@@ -2,11 +2,17 @@
 
 #define SIZE 10
 
+/**
+ * @author Yehuda Elmaliahi
+ */
 int sumArr(int *arr, int size) {
     if (size == 0) { return 0; }
     return sumArr(arr + 1, size - 1) + *arr;
 }
 
+/**
+ * @author Tal Jacob
+ */
 int sumArrReversed(int *arr, int size) {
     if (size == 0) { return 0; }
     return sumArr(arr, size - 1) + arr[size - 1];

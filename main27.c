@@ -4,6 +4,9 @@
 #define SIZE  10
 #define ERROR INT_MIN
 
+/**
+ * @author Tal Jacob
+ */
 int findMaxElement(int *arr, int size) {
     if (size == 0) { return ERROR; }
 
