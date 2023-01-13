@@ -15,7 +15,7 @@ void move(int n, char t1, char t2, char t3) {
         printf("move ring from tower %c to tower %c\n", t1, t3);
     } else {
         move(n - 1, t1, t3, t2);
-        printf("move ring from tower %c yo tower %c\n", t1, t3);
+        printf("move ring from tower %c to tower %c\n", t1, t3);
         move(n - 1, t2, t1, t3);
     }
 }
