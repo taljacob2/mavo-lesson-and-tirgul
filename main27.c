@@ -8,7 +8,7 @@
  * @author Tal Jacob
  */
 int findMaxElement(int *arr, int size) {
-    if (size == 0) { return ERROR; }
+    if (size <= 0) { return ERROR; }
 
     int returnValueOfNextFindMaxElement = findMaxElement(arr + 1, size - 1);
     int maxElement = arr[0] > returnValueOfNextFindMaxElement
@@ -18,6 +18,8 @@ int findMaxElement(int *arr, int size) {
 }
 
 /**
+ * @attention unsupported when `size` is "less than or equal" to `0`.
+ *
  * @author Yehuda Elmaliahi
  */
 int findMaxElementYehuda(int *arr, int size) {
