@@ -1,7 +1,14 @@
 #include <stdio.h>
 
 /**
+ * Hanoi tower.
+ *
  * Function from lecture.
+ *
+ * At the starting point, all rings are positioned in `t1`.
+ * Where the largest ring is positioned at the bottom, and the second largest
+ * ring is positioned on top of it, and the third largest ring is position on
+ * top of it, and so on...
  */
 void move(int n, char t1, char t2, char t3) {
     if (n == 1) {
