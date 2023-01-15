@@ -15,6 +15,8 @@
  */
 int findElementByBinarySearch(int *arr, int size, int element) {
     if (size <= 0) { return -1; }
+
+    // continue implementation here...
 }
 
 
@@ -44,8 +46,15 @@ int main() {
     printf("findElementByBinarySearchYehuda = %d\n",
            *findElementByBinarySearchYehuda(arr, SIZE, 3));
 
-    int arr2[1] = {0};
-    printf("findElementByBinarySearchYehuda = %d\n",
-           *findElementByBinarySearchYehuda(arr2, 1, 1));
+    int  arr2[1]         = {0};
+    int  elementToSearch = 1;
+    int *returnValue =
+            findElementByBinarySearchYehuda(arr2, 1, elementToSearch);
+    if (returnValue == NULL) {
+        printf("The element `%d` was not found.\n", elementToSearch);
+    } else {
+        printf("findElementByBinarySearchYehuda = %d\n",
+               *findElementByBinarySearchYehuda(arr2, 1, 1));
+    }
     return 0;
 }
