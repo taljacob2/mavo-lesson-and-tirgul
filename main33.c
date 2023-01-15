@@ -19,6 +19,9 @@ int f(int n) {
 }
 
 int main() {
+    printf("%d\n", f(2));
     printf("%d\n", f(3));
+    printf("%d\n", f(4));
+    printf("%d\n", f(5));
 
     return 0; }
