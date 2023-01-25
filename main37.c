@@ -49,7 +49,12 @@ int longestPalindromeSubstring(char *str) {
 }
 
 int main() {
+
+    // Should return `5`.
     printf("%d\n", longestPalindromeSubstring("toyota"));
+
+    // Should return `14`.
+    printf("%d\n", longestPalindromeSubstring("pleaseneveroddorevenplease"));
 
     return 0;
 }
