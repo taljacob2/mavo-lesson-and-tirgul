@@ -6,15 +6,13 @@ typedef int BOOLEAN;
 
 
 BOOLEAN isPalindrome(char *strStartPosition, char *strEndPosition) {
-    char *savedStrStartPosition = strStartPosition;
-    char *savedStrEndPosition   = strEndPosition;
     while (*strStartPosition == *strEndPosition) {
-        strStartPosition++;
-        strEndPosition--;
-        if (strStartPosition == savedStrEndPosition &&
-            strEndPosition == savedStrStartPosition) {
+        if ((strStartPosition + 1 == strEndPosition) ||
+            (strStartPosition == strEndPosition)) {
             return TRUE;
         }
+        strStartPosition++;
+        strEndPosition--;
     }
     return FALSE;
 }
