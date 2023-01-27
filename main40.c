@@ -2,8 +2,25 @@
 
 #define N 5
 
-void bubbleSort(int *arr, size_t size){
+#define FALSE 0
+#define TRUE 1
+typedef int BOOLEAN;
 
+
+void swap(int *first, int *second){
+    int tmp = *first;
+    *first = *second;
+    *second = tmp;
+}
+
+void bubbleSort(int *arr, size_t size, BOOLEAN (*compare)(int, int)){
+    for (size_t i = 0; i < size; ++i) {
+        for (size_t j = 0; j < size; ++j) {
+            if (compare(arr[i], arr[j])){
+                swap(&arr[i], &arr[j]);
+            }
+        }
+    }
 }
 
 /**
